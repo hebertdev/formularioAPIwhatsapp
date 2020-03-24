@@ -124,34 +124,6 @@
 </head>
 <body>
 
-
-	<!-- Load Facebook SDK for JavaScript -->
-	<div id="fb-root"></div>
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				xfbml            : true,
-				version          : 'v6.0'
-			});
-		};
-
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
-		<!-- Your customer chat code -->
-		<div class="fb-customerchat"
-		attribution=setup_tool
-		page_id="333742320834229"
-		theme_color="#ffc300"
-		logged_in_greeting="En que podemos ayudarle?"
-		logged_out_greeting="En que podemos ayudarle?">
-	</div>
-
 	<a href="https://api.whatsapp.com/send?phone=942885252&text=hola%20hebert" target="_blank">api de whatsapp</a>
 	<div>
 		<div>
@@ -162,39 +134,39 @@
 				<label for="">Mensaje</label>
 				<textarea id="inputmensaje" name="" id="" cols="30" rows="10" class="textareawts" required=""></textarea>
 				<button type="submit" id="sendbttn" class="btnwtsp">Enviar mensaje</button type="submit">
-				</form>
-			</div>
-			<img id="icon-whatsapp" class="image-icon-whatsapp" src="img/whatsapp.webp" alt="" width="70">
+			</form>
 		</div>
+		<img id="icon-whatsapp" class="image-icon-whatsapp" src="img/whatsapp.webp" alt="" width="70">
+	</div>
 
-		<script>
-			var IconWhatsapp = document.querySelector('#icon-whatsapp');
-			var formulariowtsp = document.getElementById('formulariowtsp');
-			var closemodal = document.querySelector('.closemodal');
-			var sendbttn = document.querySelector('#sendbttn');
+	<script>
+		var IconWhatsapp = document.querySelector('#icon-whatsapp');
+		var formulariowtsp = document.getElementById('formulariowtsp');
+		var closemodal = document.querySelector('.closemodal');
+		var sendbttn = document.querySelector('#sendbttn');
 
-			
-			IconWhatsapp.addEventListener('click' , function(){
-				formulariowtsp.classList.toggle('entrarysalir')
-			})
+		
+		IconWhatsapp.addEventListener('click' , function(){
+			formulariowtsp.classList.toggle('entrarysalir')
+		})
 
-			closemodal.addEventListener('click' , function(){
-				formulariowtsp.classList.remove('entrarysalir')
-			})
+		closemodal.addEventListener('click' , function(){
+			formulariowtsp.classList.remove('entrarysalir')
+		})
 
-			sendbttn.addEventListener('click' , EnviarMensaje)
+		sendbttn.addEventListener('click' , EnviarMensaje)
 
-			function EnviarMensaje(){
+		function EnviarMensaje(){
 
 
-				let name = document.querySelector('#inputname').value;
-				let mensaje = document.querySelector('#inputmensaje').value;
-				
-				let url = "https://api.whatsapp.com/send?phone=51942885252&text=Nombre: %0A" + name + "%0A%0AMensaje: %0A" + mensaje + "%0A";
-				window.open(url);
+			let name = document.querySelector('#inputname').value;
+			let mensaje = document.querySelector('#inputmensaje').value;
+		
+			let url = "https://api.whatsapp.com/send?phone=51942885252&text=Nombre: %0A" + name + "%0A%0AMensaje: %0A" + mensaje + "%0A";
+			window.open(url);
 
-			}
+		}
 
-		</script>
-	</body>
-	</html>
+	</script>
+</body>
+</html>
